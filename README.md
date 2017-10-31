@@ -1,4 +1,5 @@
 # UIWindowTransitions
+## Animate `rootViewController` transition
 
 This is a small project used to demostrate how to implement UIWindow's `rootViewController` transitions with a little piece of code.
 You can found the original article for [this article here](http://danielemargutti.com/animate-uiwindows-rootviewcontroller-transitions).
@@ -51,7 +52,7 @@ wnd?.setRootViewController(newVC)
 ```
 
 ## Installation
-You can install Hydra using CocoaPods, Carthage and Swift package manager
+You can install UIWindowTransitions using CocoaPods, Carthage and Swift package manager
 
 `pod 'UIWindowTransitions'`
 
@@ -63,7 +64,7 @@ pod 'UIWindowTransitions'
 github 'malcommac/UIWindowTransitions'
 
 ### Swift Package Manager
-Add Hydra as dependency in your `Package.swift`
+Add UIWindowTransitions as dependency in your `Package.swift`
 
 ```
 import PackageDescription
