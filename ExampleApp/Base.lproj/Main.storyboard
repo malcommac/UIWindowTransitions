@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDM-YK-9u4">
+                                <rect key="frame" x="15" y="35" width="345" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="fkH-WZ-KB3"/>
+                                </constraints>
+                                <string key="text">The purpose of this project is to show how to change UIWindow's rootViewController with an animation like it was inside a navigation controller.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ANIMATIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCx-pX-tcI">
+                                <rect key="frame" x="119" y="156" width="138" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e82-oe-RQG">
+                                <rect key="frame" x="15" y="244" width="345" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="UtI-D2-t2V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="→ PUSH TO RIGHT"/>
+                                <connections>
+                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Nd-1o-AlS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX3-ZG-7va">
+                                <rect key="frame" x="15" y="304" width="345" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="xnp-Ph-ZKq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="← POP TO LEFT"/>
+                                <connections>
+                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bsi-uE-xcg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcS-lN-E5a">
+                                <rect key="frame" x="15" y="364" width="345" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="9r7-oQ-1fd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="↑ SLIDE TO TOP"/>
+                                <connections>
+                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wds-0P-1eU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJG-lS-edW">
+                                <rect key="frame" x="15" y="424" width="345" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Do2-xq-h68"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="↓ SLIDE TO BOTTOM"/>
+                                <connections>
+                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zx5-YL-qRZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1057950184" green="0.33566591140000002" blue="0.57646769289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e82-oe-RQG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="0Aa-Xj-mGH"/>
+                            <constraint firstItem="fcS-lN-E5a" firstAttribute="top" secondItem="vX3-ZG-7va" secondAttribute="bottom" constant="15" id="39S-Y0-WUx"/>
+                            <constraint firstItem="TDM-YK-9u4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="6a1-uc-kWt"/>
+                            <constraint firstItem="pJG-lS-edW" firstAttribute="top" secondItem="fcS-lN-E5a" secondAttribute="bottom" constant="15" id="HPn-rk-gHS"/>
+                            <constraint firstItem="vX3-ZG-7va" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="M6J-CO-866"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vX3-ZG-7va" secondAttribute="trailing" constant="15" id="OMk-8p-eio"/>
+                            <constraint firstItem="fcS-lN-E5a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="YGO-0o-SIS"/>
+                            <constraint firstItem="HCx-pX-tcI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cWY-F5-vfp"/>
+                            <constraint firstItem="vX3-ZG-7va" firstAttribute="top" secondItem="e82-oe-RQG" secondAttribute="bottom" constant="15" id="cYd-K5-Oqo"/>
+                            <constraint firstItem="pJG-lS-edW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="d0o-F5-bUm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e82-oe-RQG" secondAttribute="trailing" constant="15" id="fmn-BE-1v0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pJG-lS-edW" secondAttribute="trailing" constant="15" id="gV8-MR-n4J"/>
+                            <constraint firstItem="TDM-YK-9u4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="gWB-Wg-PQz"/>
+                            <constraint firstItem="e82-oe-RQG" firstAttribute="top" secondItem="HCx-pX-tcI" secondAttribute="bottom" constant="61" id="jGI-Cp-s27"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fcS-lN-E5a" secondAttribute="trailing" constant="15" id="kcj-c4-5gQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TDM-YK-9u4" secondAttribute="trailing" constant="15" id="sVE-an-hLQ"/>
+                            <constraint firstItem="HCx-pX-tcI" firstAttribute="top" secondItem="TDM-YK-9u4" secondAttribute="bottom" constant="33" id="tHH-im-IKe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button_bottom" destination="fcS-lN-E5a" id="JgL-bh-sOl"/>
+                        <outlet property="button_left" destination="vX3-ZG-7va" id="Qfy-uc-Qp4"/>
+                        <outlet property="button_right" destination="e82-oe-RQG" id="WRR-q9-65g"/>
+                        <outlet property="button_top" destination="pJG-lS-edW" id="rtz-M0-meu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="113.79310344827587"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L7e-dT-cTv">
+            <objects>
+                <navigationController storyboardIdentifier="Navigation" id="Tik-p6-63i" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O3Z-HQ-rDs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mPc-2f-ItX" kind="relationship" relationship="rootViewController" id="6Uj-Jb-wBM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFf-Vx-3qH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663" y="114"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="Vjy-Su-cvV">
+            <objects>
+                <viewController storyboardIdentifier="ViewController2" id="mPc-2f-ItX" customClass="ViewController2" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vQ3-Jw-rwy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyC-kG-Kn3">
+                                <rect key="frame" x="15" y="311" width="345" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="wve-wH-nPf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="RESET WITH FADE ANIMATION"/>
+                                <connections>
+                                    <action selector="tapButton:" destination="mPc-2f-ItX" eventType="touchUpInside" id="tiC-42-O2A"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The new rootViewController is now a navigation controller with this viewcontroller inside" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7V-gh-qeq">
+                                <rect key="frame" x="15" y="82" width="345" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.08874874562" green="0.62634325030000004" blue="0.52075511220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y7V-gh-qeq" firstAttribute="top" secondItem="9Ld-Td-Cny" secondAttribute="top" constant="18" id="6Tc-7o-pQg"/>
+                            <constraint firstItem="Y7V-gh-qeq" firstAttribute="leading" secondItem="9Ld-Td-Cny" secondAttribute="leading" constant="15" id="HUh-TT-yVu"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7V-gh-qeq" secondAttribute="trailing" constant="15" id="SkJ-3F-jgQ"/>
+                            <constraint firstItem="WyC-kG-Kn3" firstAttribute="centerY" secondItem="vQ3-Jw-rwy" secondAttribute="centerY" id="Y5I-5u-HJV"/>
+                            <constraint firstItem="WyC-kG-Kn3" firstAttribute="centerX" secondItem="vQ3-Jw-rwy" secondAttribute="centerX" id="a2w-mj-hwM"/>
+                            <constraint firstItem="9Ld-Td-Cny" firstAttribute="trailing" secondItem="WyC-kG-Kn3" secondAttribute="trailing" constant="15" id="p6s-Zj-HZd"/>
+                            <constraint firstItem="WyC-kG-Kn3" firstAttribute="leading" secondItem="9Ld-Td-Cny" secondAttribute="leading" constant="15" id="wJR-lw-7cA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Ld-Td-Cny"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="V2w-ps-qOm"/>
+                    <connections>
+                        <outlet property="button_reset" destination="WyC-kG-Kn3" id="cas-2o-fWb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zg-xO-eQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="113.79310344827587"/>
+        </scene>
+    </scenes>
+</document>
