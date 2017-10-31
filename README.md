@@ -1,5 +1,5 @@
 # UIWindowTransitions
-## Animate `rootViewController` transition
+### Animate `rootViewController` transitions
 
 This is a small project used to demostrate how to implement UIWindow's `rootViewController` transitions with a little piece of code.
 You can found the original article for [this article here](http://danielemargutti.com/animate-uiwindows-rootviewcontroller-transitions).
@@ -23,7 +23,9 @@ As you may imagine the destination controller is the controller you want to set 
 ### Example
 
 Once implemented you can use the only function exposed to all UIWindow instances called
-`public func setRootViewController(_ controller: UIViewController, options: TransitionOptions = TransitionOptions())`
+```swift
+public func setRootViewController(_ controller: UIViewController, options: TransitionOptions = TransitionOptions())
+```
 
 where:
 
@@ -50,6 +52,12 @@ If you just need of a simple push (like `UINavigationController`'s push) you can
 ```swift
 wnd?.setRootViewController(newVC)
 ```
+
+### Demo
+
+The following demo is available inside the project's demo application.
+
+![](https://github.com/malcommac/UIWindowTransitions/blob/master/UIWindowTransitions_Demo_Animation.gif)
 
 ## Installation
 You can install UIWindowTransitions using CocoaPods, Carthage and Swift package manager
