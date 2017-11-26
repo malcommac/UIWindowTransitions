@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "UIWindowTransitions"
-  s.version      = "0.1"
+  s.version      = "0.1.1"
   s.summary      = ""
   s.description  = <<-DESC
-    Your description here.
+    Simple transitions for UIWindow's rootViewController set.
   DESC
   s.homepage     = "https://github.com/malcommac/UIWindowTransitions"
   s.license      = { :type => "MIT", :file => "LICENSE" }
