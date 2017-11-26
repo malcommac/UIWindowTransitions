@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "UIWindowTransitions"
   s.version      = "0.1.1"
-  s.summary      = ""
+  s.summary      = "Animated transitions for UIWindow's rootViewController property"
   s.description  = <<-DESC
     Simple transitions for UIWindow's rootViewController set.
   DESC
