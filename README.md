@@ -74,7 +74,7 @@ github 'malcommac/UIWindowTransitions'
 ### Swift Package Manager
 Add UIWindowTransitions as dependency in your `Package.swift`
 
-```
+```swift
 import PackageDescription
 
 let package = Package(name: "YourPackage",
