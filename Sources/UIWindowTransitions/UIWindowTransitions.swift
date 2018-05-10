@@ -28,7 +28,7 @@ public extension UIWindow {
 			
 			/// Return the media timing function associated with curve
 			internal var function: CAMediaTimingFunction {
-				let key: String!
+				let key: String
 				switch self {
 				case .linear:		key = kCAMediaTimingFunctionLinear
 				case .easeIn:		key = kCAMediaTimingFunctionEaseIn
