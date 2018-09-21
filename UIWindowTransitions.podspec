@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "UIWindowTransitions"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Animated transitions for UIWindow's rootViewController property"
   s.description  = <<-DESC
     This library allows to execute animated transition when changing the UIWindow's rootViewController property. Animations are done using CoreAnimation.
