@@ -30,12 +30,12 @@ public extension UIWindow {
 			internal var function: CAMediaTimingFunction {
 				let key: String!
 				switch self {
-				case .linear:		key = kCAMediaTimingFunctionLinear
-				case .easeIn:		key = kCAMediaTimingFunctionEaseIn
-				case .easeOut:		key = kCAMediaTimingFunctionEaseOut
-				case .easeInOut:	key = kCAMediaTimingFunctionEaseInEaseOut
+				case .linear:		key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.linear)
+				case .easeIn:		key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.easeIn)
+				case .easeOut:		key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.easeOut)
+				case .easeInOut:	key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.easeInEaseOut)
 				}
-				return CAMediaTimingFunction(name: key)
+				return CAMediaTimingFunction(name: convertToCAMediaTimingFunctionName(key))
 			}
 		}
 		
@@ -58,19 +58,19 @@ public extension UIWindow {
 			/// - Returns: transition
 			internal func transition() -> CATransition {
 				let transition = CATransition()
-				transition.type = kCATransitionPush
+				transition.type = CATransitionType.push
 				switch self {
 				case .fade:
-					transition.type = kCATransitionFade
+					transition.type = CATransitionType.fade
 					transition.subtype = nil
 				case .toLeft:
-					transition.subtype = kCATransitionFromLeft
+					transition.subtype = CATransitionSubtype.fromLeft
 				case .toRight:
-					transition.subtype = kCATransitionFromRight
+					transition.subtype = CATransitionSubtype.fromRight
 				case .toTop:
-					transition.subtype = kCATransitionFromTop
+					transition.subtype = CATransitionSubtype.fromTop
 				case .toBottom:
-					transition.subtype = kCATransitionFromBottom
+					transition.subtype = CATransitionSubtype.fromBottom
 				}
 				return transition
 			}
@@ -166,4 +166,14 @@ internal extension UIViewController {
 		return controller
 	}
 	
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromCAMediaTimingFunctionName(_ input: CAMediaTimingFunctionName) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCAMediaTimingFunctionName(_ input: String) -> CAMediaTimingFunctionName {
+	return CAMediaTimingFunctionName(rawValue: input)
 }
