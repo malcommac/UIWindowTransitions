@@ -14,7 +14,7 @@
 		640CE0CF1FA857C800CF5222 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640CE0CD1FA857C800CF5222 /* LaunchScreen.storyboard */; };
 		640CE0D91FA86D7E00CF5222 /* UIWindowTransitions.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* UIWindowTransitions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		640CE0DB1FA87BCF00CF5222 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE0DA1FA87BCF00CF5222 /* ViewController2.swift */; };
-		8933C7851EB5B820000D00A4 /* UIWindowTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* UIWindowTransitions.swift */; };
+		64FB68E81FCAF77C0092C430 /* UIWindowTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB68E71FCAF77C0092C430 /* UIWindowTransitions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		640CE0CE1FA857C800CF5222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		640CE0D01FA857C800CF5222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		640CE0DA1FA87BCF00CF5222 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		8933C7841EB5B820000D00A4 /* UIWindowTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowTransitions.swift; sourceTree = "<group>"; };
+		64FB68E71FCAF77C0092C430 /* UIWindowTransitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIWindowTransitions.swift; path = UIWindowTransitions/UIWindowTransitions.swift; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* UIWindowTransitionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowTransitionsTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* UIWindowTransitions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UIWindowTransitions.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* UIWindowTransitionsTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UIWindowTransitionsTests.plist; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8933C7841EB5B820000D00A4 /* UIWindowTransitions.swift */,
+				64FB68E71FCAF77C0092C430 /* UIWindowTransitions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8933C7851EB5B820000D00A4 /* UIWindowTransitions.swift in Sources */,
+				64FB68E81FCAF77C0092C430 /* UIWindowTransitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
