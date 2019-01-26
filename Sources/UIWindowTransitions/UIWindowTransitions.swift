@@ -77,10 +77,11 @@ public extension UIWindow {
 		}
 		
 		/// Background of the transition
-		///
+		/// - snapshot: snapshot of current root view controller
 		/// - solidColor: solid color
 		/// - customView: custom view
 		public enum Background {
+      case snapshot
 			case solidColor(_: UIColor)
 			case customView(_: UIView)
 		}
@@ -130,6 +131,10 @@ public extension UIWindow {
 		if let background = options.background {
 			transitionWnd = UIWindow(frame: UIScreen.main.bounds)
 			switch background {
+      case .snapshot:
+        if let currentView = snapshotView(afterScreenUpdates: true) {
+          transitionWnd?.rootViewController = UIViewController.newController(withView: currentView, frame: transitionWnd!.bounds)
+        }
 			case .customView(let view):
 				transitionWnd?.rootViewController = UIViewController.newController(withView: view, frame: transitionWnd!.bounds)
 			case .solidColor(let color):
