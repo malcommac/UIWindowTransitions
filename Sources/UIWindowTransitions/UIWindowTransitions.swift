@@ -12,7 +12,7 @@ import UIKit
 public extension UIWindow {
 	
 	/// Transition Options
-	public struct TransitionOptions {
+	struct TransitionOptions {
 		
 		/// Curve of animation
 		///
@@ -28,14 +28,14 @@ public extension UIWindow {
 			
 			/// Return the media timing function associated with curve
 			internal var function: CAMediaTimingFunction {
-				let key: String!
-				switch self {
-				case .linear:		key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.linear)
-				case .easeIn:		key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.easeIn)
-				case .easeOut:		key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.easeOut)
-				case .easeInOut:	key = convertFromCAMediaTimingFunctionName(CAMediaTimingFunctionName.easeInEaseOut)
+                let name: String
+                switch self {
+				case .linear:		name = kCAMediaTimingFunctionLinear
+				case .easeIn:		name = kCAMediaTimingFunctionEaseIn
+				case .easeOut:		name = kCAMediaTimingFunctionEaseOut
+				case .easeInOut:	name = kCAMediaTimingFunctionEaseInEaseOut
 				}
-				return CAMediaTimingFunction(name: convertToCAMediaTimingFunctionName(key))
+                return CAMediaTimingFunction(name: name)
 			}
 		}
 		
@@ -58,19 +58,19 @@ public extension UIWindow {
 			/// - Returns: transition
 			internal func transition() -> CATransition {
 				let transition = CATransition()
-				transition.type = CATransitionType.push
+				transition.type = kCATransitionPush
 				switch self {
 				case .fade:
-					transition.type = CATransitionType.fade
+					transition.type = kCATransitionFade
 					transition.subtype = nil
 				case .toLeft:
-					transition.subtype = CATransitionSubtype.fromLeft
+					transition.subtype = kCATransitionFromLeft
 				case .toRight:
-					transition.subtype = CATransitionSubtype.fromRight
+					transition.subtype = kCATransitionFromRight
 				case .toTop:
-					transition.subtype = CATransitionSubtype.fromTop
+					transition.subtype = kCATransitionFromTop
 				case .toBottom:
-					transition.subtype = CATransitionSubtype.fromBottom
+					transition.subtype = kCATransitionFromBottom
 				}
 				return transition
 			}
@@ -125,7 +125,7 @@ public extension UIWindow {
 	/// - Parameters:
 	///   - controller: controller to set
 	///   - options: options of the transition
-	public func setRootViewController(_ controller: UIViewController, options: TransitionOptions = TransitionOptions()) {
+    func setRootViewController(_ controller: UIViewController, options: TransitionOptions = TransitionOptions()) {
 		
 		var transitionWnd: UIWindow? = nil
 		if let background = options.background {
@@ -171,14 +171,4 @@ internal extension UIViewController {
 		return controller
 	}
 	
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromCAMediaTimingFunctionName(_ input: CAMediaTimingFunctionName) -> String {
-	return input.rawValue
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToCAMediaTimingFunctionName(_ input: String) -> CAMediaTimingFunctionName {
-	return CAMediaTimingFunctionName(rawValue: input)
 }
