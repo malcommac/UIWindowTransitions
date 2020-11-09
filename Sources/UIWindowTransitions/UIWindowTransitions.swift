@@ -163,9 +163,11 @@ public extension UIWindow {
 		makeKeyAndVisible()
         
 		if let wnd = transitionWnd {
-			DispatchQueue.main.asyncAfter(deadline: (.now() + 1 + options.duration)) { [completion] in
-				wnd.removeFromSuperview()
+            DispatchQueue.main.asyncAfter(deadline: (.now() + options.duration)) { [completion] in
                 completion?()
+            }
+			DispatchQueue.main.asyncAfter(deadline: (.now() + 1 + options.duration)) {
+				wnd.removeFromSuperview()
 			}
         } else {
             completion?()
