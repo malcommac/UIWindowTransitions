@@ -112,9 +112,10 @@ public extension UIWindow {
 		
 		/// Return the animation to perform for given options object
 		internal var animation: CATransition {
-			let transition = self.direction.transition()
-			transition.duration = self.duration
-			transition.timingFunction = self.style.function
+			let transition = direction.transition()
+			transition.duration = duration
+			transition.timingFunction = style.function
+            
 			return transition
 		}
 	}
@@ -125,34 +126,50 @@ public extension UIWindow {
 	/// - Parameters:
 	///   - controller: controller to set
 	///   - options: options of the transition
-	public func setRootViewController(_ controller: UIViewController, options: TransitionOptions = TransitionOptions()) {
-		
+    public func setRootViewController(
+        _ controller: UIViewController,
+        options: TransitionOptions = TransitionOptions(),
+        with completion: (() -> Void)? = nil
+    ) {
 		var transitionWnd: UIWindow? = nil
 		if let background = options.background {
 			transitionWnd = UIWindow(frame: UIScreen.main.bounds)
-			switch background {
-      case .snapshot:
-        if let currentView = snapshotView(afterScreenUpdates: true) {
-          transitionWnd?.rootViewController = UIViewController.newController(withView: currentView, frame: transitionWnd!.bounds)
-        }
-			case .customView(let view):
-				transitionWnd?.rootViewController = UIViewController.newController(withView: view, frame: transitionWnd!.bounds)
-			case .solidColor(let color):
-				transitionWnd?.backgroundColor = color
+        
+            switch background {
+                case .snapshot:
+                    if let currentView = snapshotView(afterScreenUpdates: true) {
+                        transitionWnd?.rootViewController = UIViewController.newController(
+                            withView: currentView,
+                            frame: transitionWnd!.bounds
+                        )
+                    }
+            
+                case .customView(let view):
+                    transitionWnd?.rootViewController = UIViewController.newController(
+                        withView: view,
+                        frame: transitionWnd!.bounds
+                    )
+            
+                case .solidColor(let color):
+                    transitionWnd?.backgroundColor = color
 			}
+            
 			transitionWnd?.makeKeyAndVisible()
 		}
 		
 		// Make animation
-		self.layer.add(options.animation, forKey: kCATransition)
-		self.rootViewController = controller
-		self.makeKeyAndVisible()
-		
+		layer.add(options.animation, forKey: kCATransition)
+		rootViewController = controller
+		makeKeyAndVisible()
+        
 		if let wnd = transitionWnd {
-			DispatchQueue.main.asyncAfter(deadline: (.now() + 1 + options.duration), execute: {
+			DispatchQueue.main.asyncAfter(deadline: (.now() + 1 + options.duration)) { [completion] in
 				wnd.removeFromSuperview()
-			})
-		}
+                completion?()
+			}
+        } else {
+            completion?()
+        }
 	}
 }
 
