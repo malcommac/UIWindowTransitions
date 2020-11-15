@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/malcommac/UIWindowTransitions"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Daniele Margutti" => "me@danielemargutti.com" }
-  s.social_media_url   = ""
+  s.social_media_url   = "https://twitter.com/danielemargutti"
   s.ios.deployment_target = "11.0"
   s.source       = { :git => "https://github.com/malcommac/UIWindowTransitions.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*.swift"
