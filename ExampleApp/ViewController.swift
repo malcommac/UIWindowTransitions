@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 		let u = UIStoryboard(name: "Main", bundle: Bundle.main)
 		let vc = u.instantiateViewController(withIdentifier: "Navigation") as! UINavigationController
 		
-		var options = UIWindow.TransitionOptions()
+		let options = UIWindow.TransitionOptions()
 		switch sender.tag {
 		case 0:
 			options.direction = .toRight
@@ -50,14 +50,14 @@ class ViewController: UIViewController {
 		default:
 			break
 		}
-		wnd?.setRootViewController(vc, options: options)
+        wnd?.set(rootViewController: vc, options: options, nil)
 	}
 	
 }
 
 public extension UIButton {
 	
-	public func tint() {
+    func tint() {
 		self.layer.borderColor = UIColor.white.cgColor
 		self.layer.borderWidth = 1.0
 		self.layer.cornerRadius = 4
