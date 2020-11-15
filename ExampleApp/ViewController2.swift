@@ -17,10 +17,10 @@ public class ViewController2: UIViewController {
 		let u = UIStoryboard(name: "Main", bundle: Bundle.main)
 		let vc = u.instantiateViewController(withIdentifier: "ViewController")
 		
-		var opt = UIWindow.TransitionOptions(direction: .toLeft, style: .easeInOut)
+		let opt = UIWindow.TransitionOptions(direction: .toLeft, style: .easeInOut)
 		//opt.background = UIWindow.TransitionOptions.Background.solidColor(UIColor.red)
 		opt.duration = 0.25
-		UIApplication.shared.keyWindow?.setRootViewController(vc, options: opt)
+        UIApplication.shared.keyWindow?.set(rootViewController: vc, options: opt, nil)
 	}
 	
 	public override func viewDidLoad() {
