@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="banner.png" width=300px alt="SwiftLocation" title="SwiftLocation">
+  <img src="banner.png" width=300px alt="UIWindowTransitions" title="UIWindowTransitions">
 </p>
 
 <p align="center"><strong>Animate UIWindow's rootViewController transitions</strong></p>
@@ -113,7 +113,7 @@ let package = Package(name: "YourPackage",
 
 ## Copyright & Acknowledgements
 
-SwiftLocation is currently owned and maintained by Daniele Margutti.  
+UIWindowTransitions is currently owned and maintained by Daniele Margutti.  
 You can follow me on Twitter [@danielemargutti](http://twitter.com/danielemargutti).  
 My web site is [https://www.danielemargutti.com](https://www.danielemargutti.com) 
 
